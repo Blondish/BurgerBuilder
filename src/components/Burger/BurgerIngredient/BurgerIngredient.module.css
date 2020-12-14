@@ -97,6 +97,14 @@
     border-radius: 20px;
 }
 
+.Bacon {
+  width: 90%;
+  height: 3.5%;
+  margin: 2% auto;
+  background: linear-gradient(#e04720, #50201dd2);
+  border-radius: 20px;
+}
+
 .Salad {
     width: 85%;
     height: 7%;

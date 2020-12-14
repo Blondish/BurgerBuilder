@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classes from "./burgerIngredient.module.import 'vuetify/dist/vuetify.min.css'"
+import classes from "./BurgerIngredient.module.css"
 
 const burgerIngredient = (props) => {
     let ingredient = null;
@@ -18,6 +18,8 @@ const burgerIngredient = (props) => {
         case ("salad"): ingredient = <div className={classes.Salad}></div>;
             break;
         case ("cheese"): ingredient = <div className={classes.Cheese}></div>;
+            break;
+        case ("bacon"): ingredient = <div className={classes.Bacon}></div>;
             break;
         default: ingredient = null
     }
