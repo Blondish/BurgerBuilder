@@ -27,6 +27,7 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props)
         axiosinstance.get("https://burgerapp-5ad22-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json")
             .then(response => {
                 this.setState({ ingredients: response.data })
@@ -87,25 +88,26 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        this.setState({ loading: true })
-        const order = {
-            ingredients: this.state.ingredients,
-            totalPrice: this.state.totalPrice,
-            customer: {
-                name: "Olena",
-                address: {
-                    street: "MyStreet 11",
-                    city: "MyCity",
-                    country: "Spain"
-                },
-                email: "olena@hotmail.com"
-            },
-            deliveryMethod: "fastest"
-        }
+        // this.setState({ loading: true })
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     totalPrice: this.state.totalPrice,
+        //     customer: {
+        //         name: "Olena",
+        //         address: {
+        //             street: "MyStreet 11",
+        //             city: "MyCity",
+        //             country: "Spain"
+        //         },
+        //         email: "olena@hotmail.com"
+        //     },
+        //     deliveryMethod: "fastest"
+        // }
 
-        axiosinstance.post("/orders.json", order)
-            .then(response => this.setState({ loading: false, purchasing: false }))
-            .catch(error => this.setState({ loading: false, purchasing: false }))
+        // axiosinstance.post("/orders.json", order)
+        //     .then(response => this.setState({ loading: false, purchasing: false }))
+        //     .catch(error => this.setState({ loading: false, purchasing: false }))
+        this.props.history.push("/checkout")
     }
 
     render() {
